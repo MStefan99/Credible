@@ -7,8 +7,8 @@ const StorageProvider = require('./lib/StorageProvider');
 (() => {
 	const s = new StorageProvider;
 
-	s.writeFile('./a/text.txt', 'stuff')
-		.then(() => s.readFile('./a/text.txt'))
+	s.writeFile('./data/text.txt', 'stuff')
+		.then(() => s.readFile('./data/text.txt'))
 		.then(data => console.log(data))
 		.catch(err => console.error(err));
 }).call({});
