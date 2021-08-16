@@ -1,0 +1,15 @@
+{
+  "name": "credible",
+  "version": "0.0.1-alpha",
+  "description": "Credible - secure credential manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MStefan99",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@mstefan99/argumented": "^1.0.1"
+  }
+}
