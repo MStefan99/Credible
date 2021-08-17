@@ -1,14 +1,13 @@
 'use strict';
 
 const argumented = require('@mstefan99/argumented');
-const SecureStorageProvider = require('./lib/SecureStorageProvider');
+const AccountManager = require('./lib/AccountManager');
 
 
 (() => {
-	const s = new SecureStorageProvider('username', 'password');
+	const accountManager = new AccountManager();
 
-	s.save('data', {customData: 'hello'})
-			.then(() => s.load('data'))
-			.catch(err => console.error(err))
-			.then(data => console.log(data));
+	// accountManager.createUser('mstefan99', 'testtest');
+	accountManager.loadUser('mstefan99', 'testtest')
+			.then(user => user.registerPath('datapath'));
 }).call({});

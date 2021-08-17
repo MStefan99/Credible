@@ -394,5 +394,4 @@ fabric.properties
 
 ### Custom rules
 # Data stored by Credible
-data/
-config/
+storage/
