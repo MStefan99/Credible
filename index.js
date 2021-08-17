@@ -1,14 +1,14 @@
 'use strict';
 
 const argumented = require('@mstefan99/argumented');
-const CryptoProvider = require('./lib/CryptoProvider');
+const SecureStorageProvider = require('./lib/SecureStorageProvider');
 
 
 (() => {
-	const s = new CryptoProvider('username', 'password');
+	const s = new SecureStorageProvider('username', 'password');
 
-	s.pack({customData: 'hello'})
-			.then(data => s.unpack(data))
+	s.save('data', {customData: 'hello'})
+			.then(data => s.load('data', data))
 			.catch(err => console.error(err))
 			.then(data => console.log(data));
 }).call({});
