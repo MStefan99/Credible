@@ -7,9 +7,8 @@ const SecureStorageProvider = require('./lib/SecureStorageProvider');
 (() => {
 	const s = new SecureStorageProvider('a', 'b');
 
-	s.save('data/text', {customData: 'hello'})
-			.then(data => console.log(data))
-			.then(() => s.load('data/text'))
+	s.save('data/text', {customData: 'hello'}, null, {append: false})
+			.then(context => s.load('data/text', context))
 			.catch(err => console.error(err))
 			.then(data => console.log(data));
 }).call({});
