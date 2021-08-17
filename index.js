@@ -2,15 +2,29 @@
 
 const argumented = require('@mstefan99/argumented');
 const AccountManager = require('./lib/AccountManager');
+const Schema = require('./lib/Schema');
 
 
 (() => {
-	const accountManager = new AccountManager();
+	const obj = Schema.applySchema({
+		number: 1,
+		secondNumber: 2,
+		array: [1, 2, 3],
+		bool: true,
+		nothing: null,
+		obj: {
+			a: 1,
+			b: '2',
+			c: true,
+			d: [1, 2]
+		}
+	}, {
+		obj: {
+			a: true,
+			d: true
+		},
+		nothing: true
+	});
 
-	accountManager.loadUser('mstefan99', 'testtest')
-			// .then(user => user.updatePassword('testtest2'))
-			// .then(user => user.saveData('test', {data: 'string'}))
-			// .then(user => user.loadData('test'))
-			.then(user => user.removeData('test'))
-			.then(data => console.log(data));
+	console.log(obj);
 }).call({});
