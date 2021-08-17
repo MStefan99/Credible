@@ -8,7 +8,7 @@ const SecureStorageProvider = require('./lib/SecureStorageProvider');
 	const s = new SecureStorageProvider('username', 'password');
 
 	s.save('data', {customData: 'hello'})
-			.then(data => s.load('data', data))
+			.then(() => s.load('data'))
 			.catch(err => console.error(err))
 			.then(data => console.log(data));
 }).call({});
