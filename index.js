@@ -23,7 +23,8 @@ const Schema = require('./lib/Schema');
 			a: true,
 			d: true
 		},
-		nothing: true
+		nothing: true,
+		hello: true
 	});
 
 	console.log(obj);
