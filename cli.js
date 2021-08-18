@@ -1,6 +1,6 @@
 'use strict';
 
-const AccountManager = require('./AccountManager');
+const AccountManager = require('./lib/AccountManager');
 const accountManager = new AccountManager;
 
 
