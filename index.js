@@ -25,15 +25,17 @@ const cli = require('./lib/CLIInterface');
 	argumented.add('server', ['-s', '--server'], null,
 			'Starts a web server to access Credible remotely');
 	argumented.add('ip', ['-i', '--ip'], ['ip'],
-			'An IP address for the web server to listen on. Implies -s.');
+			'An IP address for the web server to listen on. Requires -s.');
 	argumented.add('httpPort', ['--http-port'], ['httpPort'],
-			'A port for HTTP server to listen on. Defaults to 80. Implies -s.');
+			'A port for HTTP server to listen on. Defaults to 80. Requires -s.');
 	argumented.add('httpsPort', ['--https-port'], ['httpsPort'],
-			'A port for HTTP server to listen on. Defaults to 443. Implies -s.');
+			'A port for HTTP server to listen on. Defaults to 443. Requires -s.');
 	argumented.add('certFile', ['-e', '--cert-file'], ['certFile'],
-			'Path to HTTPS certificate file');
+			'Path to HTTPS certificate file. Requires -s.');
 	argumented.add('keyFile', ['-y', '--key-file'], ['keyFile'],
-			'Path to HTTPS key file');
+			'Path to HTTPS key file. Requires -s.');
+	argumented.positionalDesc('action', 'Action to perform. Available actions: ' +
+			'add-user, change-password, remove-user, read-data, write-data and remove-data.');
 	const config = argumented.parse();
 
 	if (config.server) {
