@@ -2,12 +2,9 @@
 	"name": "@mstefan99/credible",
 	"version": "0.0.1",
 	"description": "Your credentials, stored safely",
-	"main": "./lib/AccountManager.js",
-	"scripts": {
-		"run": "node index.js"
-	},
+	"main": "lib/Credible.js",
 	"bin": {
-		"credible": "index.js"
+		"credible": "credible.js"
 	},
 	"keywords": [],
 	"author": "MStefan99",

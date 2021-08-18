@@ -1,7 +1,6 @@
 'use strict';
 
-const AccountManager = require('./lib/AccountManager');
-const accountManager = new AccountManager;
+const credible = require('./lib/Credible');
 
 
 function exit(code, err, message) {
@@ -21,7 +20,7 @@ module.exports = class CLIInterface {
 			exit(-1, 'Not authorized');
 		}
 
-		accountManager.createUser(username, password)
+		credible.createUser(username, password)
 				.then(() => exit(0))
 				.catch(err => exit(1, err));
 	}
@@ -34,7 +33,7 @@ module.exports = class CLIInterface {
 			exit(-1, 'New password not provided');
 		}
 
-		accountManager.loadUser(username, password)
+		credible.loadUser(username, password)
 				.catch(err => exit(2, err))
 				.then(user => user.updatePassword(newPassword))
 				.then(() => exit(0))
@@ -47,7 +46,7 @@ module.exports = class CLIInterface {
 			exit(-1, 'Not authorized');
 		}
 
-		accountManager.loadUser(username, password)
+		credible.loadUser(username, password)
 				.catch(err => exit(2, err))
 				.then(user => user.remove())
 				.then(() => exit(0))
@@ -64,7 +63,7 @@ module.exports = class CLIInterface {
 			exit(-1, 'No schema provided');
 		}
 
-		accountManager.loadUser(username, password)
+		credible.loadUser(username, password)
 				.catch(err => exit(2, err))
 				.then(user => user.loadData(key, JSON.parse(schema)))
 				.then(data => exit(0, null, JSON.stringify(data)))
@@ -81,7 +80,7 @@ module.exports = class CLIInterface {
 			exit(-1, 'No data provided');
 		}
 
-		accountManager.loadUser(username, password)
+		credible.loadUser(username, password)
 				.catch(err => exit(2, err))
 				.then(user => user.saveData(key, JSON.parse(data)))
 				.then(() => exit(0))
@@ -96,7 +95,7 @@ module.exports = class CLIInterface {
 			exit(-1, 'No key provided');
 		}
 
-		accountManager.loadUser(username, password)
+		credible.loadUser(username, password)
 				.catch(err => exit(2, err))
 				.then(user => user.removeData(key))
 				.then(() => exit(0))
