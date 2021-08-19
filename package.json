@@ -4,7 +4,7 @@
 	"description": "Your credentials, stored safely",
 	"main": "lib/Credible.js",
 	"bin": {
-		"credible": "credible.js"
+		"credible": "cli.js"
 	},
 	"keywords": [],
 	"author": "MStefan99",

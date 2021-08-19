@@ -16,7 +16,7 @@ whether your data has been tampered with.
 
 ### Usage
 
-*CLI help available at `node ./credible.js --help`*
+*CLI help available at `node ./cli.js --help`*
 
 To start using Credible, include the module:
 
