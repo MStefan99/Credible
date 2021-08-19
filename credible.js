@@ -10,8 +10,6 @@ const cli = require('./cli');
 			'Username required for CLI mode');
 	argumented.add('password', ['-p', '--password'], ['password'],
 			'Password required for CLI mode');
-	argumented.add('newPassword', ['-n', '--new-password'], ['newPassword'],
-			'New password to set');
 	argumented.add('key', ['-k', '--key'], ['key'],
 			'Key of the data to save/load');
 	argumented.add('schema', ['-s', '--schema'], ['schema'],
@@ -19,15 +17,12 @@ const cli = require('./cli');
 	argumented.add('data', ['-d', '--data'], ['data'],
 			'Data to store');
 	argumented.positionalDesc('action', 'Action to perform. Available actions: ' +
-			'add-user, change-password, remove-user, read-data, write-data and remove-data.');
+			'add-user, remove-user, read-data, write-data and remove-data.');
 	const config = argumented.parse();
 
 	switch (config.positional[0]) {  // Action to perform
 		case 'add-user':
 			cli.addUser(config.username, config.password);
-			break;
-		case 'change-password':
-			cli.changePassword(config.username, config.password, config.newPassword);
 			break;
 		case 'remove-user':
 			cli.removeUser(config.username, config.password);
