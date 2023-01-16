@@ -1,5 +1,7 @@
 # Credible
 
+![Maintenance](https://img.shields.io/maintenance/no/2021?style=flat-square)
+
 Credible is a secure key-value storage for your most sensitive data. With support for JSON, multiple users and nested
 keys, it can handle everything you need to keep safe. Credible automatically encrypts everything you save and checks
 whether your data has been tampered with.
