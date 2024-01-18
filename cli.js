@@ -1,6 +1,6 @@
 'use strict';
 
-const argumented = require('@mstefan99/argumented');
+const argumented = require('./lib/argumented');
 const credible = require('./lib/Credible');
 
 

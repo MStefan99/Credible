@@ -8,8 +8,5 @@
 	},
 	"keywords": [],
 	"author": "MStefan99",
-	"license": "GPL-3.0",
-	"dependencies": {
-		"@mstefan99/argumented": "^1.0.2"
-	}
+	"license": "GPL-3.0"
 }
